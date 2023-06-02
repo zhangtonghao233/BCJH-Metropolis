@@ -40,6 +40,11 @@ int getPrice(Chef &chef, Recipe &recipe, ActivityBuff *activityBuff,
                 activityBuffValue += i.second;
             }
         }
+        for (auto &i : activityBuff->flavorBuff) {
+            if (recipe.flavor.get_flavor() == i.first) {
+                activityBuffValue += i.second;
+            }
+        }
     }
     // std::cout << "activityBuff: " << activityBuff << std::endl;
     auto rb = recipe.rarityBuff[recipe.rarity - 1];
